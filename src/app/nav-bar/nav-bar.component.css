@@ -1,0 +1,28 @@
+.fill-remaining-space{
+    flex: 1 1 auto;
+}
+
+button{
+     text-transform: uppercase;
+     font-size: 16px;
+     font-weight: 900;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 70px;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: white;
+}
+
+.last-item-in-bar{
+    margin-left: auto;
+}
+
+.mat-icon{
+    margin: 0 4px 3px 0;
+}
