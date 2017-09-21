@@ -10,8 +10,64 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+  <!-- Font Awesome Library -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
   <app-root></app-root>
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <!-- Masonry Library -->
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+  <!-- Start of photoSwipe Library -->
+    <!-- Core CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css" />
+
+    <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+        In the folder of skin CSS file there are also:
+        - .png and .svg icons sprite, 
+        - preloader.gif (for browsers that do not support CSS animations) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" />
+
+    <!-- Core JS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script>
+
+    <!-- UI JS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+    <!-- Main Js file -->
+    <script src="assets/js/photoSwipe.js"></script>
+  <!-- End of photoSwipe Library -->
+
+  <!-- Parallax.js Library -->
+  <script src="assets/js/parallax.min.js"></script>
+
+  <!-- Particle.js 
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+
+  <script>
+    $(document).ready(function() {
+     // init Masonry after all images have loaded
+     var $grid = $('.grid').imagesLoaded( function() {
+        $grid.masonry({
+          itemSelector: '.grid-item',
+          percentPosition: true,
+          columnWidth: '.grid-sizer',
+        }); 
+      });
+
+      // /* Init Particle */
+      // particlesJS.load('particles-js', 'assets/particles.json', function() {
+      //   console.log('callback - particles.js config loaded');
+      // });
+
+      // Init photoSwipe
+      initPhotoSwipeFromDOM('.my-gallery');
+    });
+</script>
+
 </body>
 </html>

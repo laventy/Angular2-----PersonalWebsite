@@ -1,7 +1,9 @@
 <nav>
-  <button md-button><md-icon>sentiment_dissatisfied</md-icon> laventy</button>
-  <button md-button>home</button>
-  <button md-button>gallery</button>
+  <a class="brand"><md-icon id="brand-icon">sentiment_dissatisfied</md-icon>laventy</a>
+  <a class="mobile-hidden btn" pageScroll href="#about-me-section" [pageScrollDuration]='300'>About Me</a>
+  <a class="mobile-hidden btn" pageScroll href="#skill-section" [pageScrollDuration]='300'>Skills</a>
+  <a class="mobile-hidden btn" pageScroll href="#moment-section" [pageScrollDuration]='300'>Moments</a>
+  <a class="mobile-hidden btn" pageScroll href="#work-linkin-section" [pageScrollDuration]='300'>Work&Profile</a>
 
   <div class="fill-remaining-space"></div>
 
@@ -10,17 +12,21 @@
   </button>
 
   <md-menu #menu="mdMenu">
-    <button md-menu-item>
-      <md-icon>dialpad</md-icon>
-      <span>Redial</span>
+    <button md-menu-item pageScroll href="#about-me-section" [pageScrollDuration]='300'>
+      <md-icon>face</md-icon>
+      <span>About Me</span>
     </button>
-    <button md-menu-item disabled>
-      <md-icon>voicemail</md-icon>
-      <span>Check voicemail</span>
+    <button md-menu-item pageScroll href="#skill-section" [pageScrollDuration]='300'>
+      <md-icon>star</md-icon>
+      <span>Skills</span>
     </button>
-    <button md-menu-item>
-      <md-icon>notifications_off</md-icon>
-      <span>Disable alerts</span>
+    <button md-menu-item pageScroll href="#moment-section" [pageScrollDuration]='300'>
+      <md-icon>image</md-icon>
+      <span>Moments</span>
+    </button>
+    <button md-menu-item pageScroll href="#work-linkin-section" [pageScrollDuration]='300'>
+      <md-icon>person</md-icon>
+      <span>Work&Profile</span>
     </button>
   </md-menu>
 </nav>

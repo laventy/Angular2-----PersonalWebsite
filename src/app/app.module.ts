@@ -10,6 +10,8 @@ import { ParallaxPageComponent } from './parallax-page/parallax-page.component';
 
 import {NgsRevealModule} from 'ng-scrollreveal';
 
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,7 @@ import {NgsRevealModule} from 'ng-scrollreveal';
     MdCardModule,
     
     NgsRevealModule.forRoot(),
+    Ng2PageScrollModule,
 
   ],
   providers: [],

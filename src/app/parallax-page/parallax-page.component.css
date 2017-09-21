@@ -1,37 +1,215 @@
-.pimg1, .pimg2, .pimg3{
+.section-full-screen{
   position:relative;
-  opacity:0.90;
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat;
-
-  /*
-    fixed = parallax
-    scroll = normal
-  */
-  background-attachment:fixed;
-}
-
-.pimg1{
-  background-image:linear-gradient(
-                     rgba(20,20,20, .5), 
-                     rgba(20,20,20, .5)),
-                     url("../../assets/img/award.jpg");
-  min-height:100%;
-}
-
-.pimg2{
-    background-image:linear-gradient(
-                     rgba(20,20,20, .6), 
-                     rgba(20,20,20, .6)),
-                     url("../../assets/img/image1.jpg");
-  min-height:200px;
-  background-attachment:scroll;
+  height:100%;
 }
 
 .section{
+  position: relative;
   text-align:center;
   padding:50px 80px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
+
+.section-light{
+  background-image: url("../../assets/img/background-texture/crossword.png");
+  color:#666;
+}
+
+.section-dark{
+  background-image:url("../../assets/img/background-texture/stardust.png");
+  color:#ddd;
+}
+
+.section h2{
+  font-size: 2em;
+}
+
+.ptext{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  display: inline-block;
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
+
+/*
+  About Me Section
+*/
+#brief-container{
+  overflow: hidden;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+#brief-container:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+.brief{
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+  padding:5px;
+}
+
+#brief-container .brief img{
+  width:90px;
+}
+
+
+/* Triangle Seperater*/
+section::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+
+#about-me-section::after, #skill-section::after{
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
+  bottom: -25px;
+	z-index: 10;
+	background: inherit;
+}
+
+/*
+  About skill container
+*/
+
+.skill-wrapper{
+  width: 100%;
+  word-spacing: 130px;
+}
+
+.skill-main-container{
+  display: inline-block;
+  word-spacing: normal;
+}
+
+.skill-main-container h4{
+  font-weight: 400;
+  margin: 30px auto;
+  width: 210px;
+  border-bottom: 2px dotted #282e34;
+  padding: 10px 0;
+}
+
+.skill-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 550px;
+}
+
+.skill-element{
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.skill-element img:nth-child(1){
+  width: 100%;
+  height: 100%;
+  transition: all .3s ease-out;
+}
+
+.skill-element:hover img:nth-child(1){
+  transform: scale(1.05);
+}
+
+.skill-element img:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.skill-element .skill-text{
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 42%;
+}
+
+/*
+  My moment section
+*/
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grid-item figcaption{
+  display: none;
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+  -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(80%);
+  transition: all 0.5s;
+}
+
+.grid-item:hover img {
+  -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0);
 }
 
 /*
@@ -48,6 +226,7 @@
   display: inline-block;
   word-spacing: normal;
   line-height: normal;
+  max-height: 500px;
   width: 50%;
   margin: 0;
   padding: 0;
@@ -165,70 +344,6 @@
 	transition-duration: 0.35s;
 }
 
-
-.section-light{
-  background-color:#f4f4f4;
-  color:#666;
-}
-
-.section-dark{
-  background-color:#282e34;
-  color:#ddd;
-}
-
-.section h2{
-  font-size: 2em;
-}
-
-.ptext{
-  position:absolute;
-  top:50%;
-  transform: translateY(-50%);
-  width:100%;
-  text-align:center;
-  color:#000;
-  font-size:27px;
-  letter-spacing:8px;
-  text-transform:uppercase;
-}
-
-.ptext .border{
-  display: inline-block;
-  background-color:#111;
-  color:#fff;
-  padding:20px;
-}
-
-.ptext .border.trans{
-  background-color:transparent;
-}
-
-/*
-  About Me Section
-*/
-#brief-container{
-  overflow: hidden;
-  margin-top: 20px;
-  text-align: justify;
-}
-
-#brief-container:after {
-  content: '';
-  width: 100%;
-  display: inline-block;
-}
-
-.brief{
-  display: inline-block;
-  text-align: center;
-  width: 30%;
-  padding:5px;
-}
-
-#brief-container .brief img{
-  width:90px;
-}
-
 /*
   About Footer
 */
@@ -238,6 +353,47 @@ footer{
   text-align: center;
   background-color:#3d4142;
   color: white; 
+}
+
+footer .copyright{
+  float: left;
+}
+
+footer .copyright, footer .contact{
+  margin-top: 2px;
+}
+
+footer .contact, footer .social-network{
+  padding: 0 10px 0 10px;
+  float: right;
+}
+
+footer .social-network{
+  word-spacing: 10px;
+}
+
+footer .social-network a{
+  color: inherit;
+  text-decoration: none;
+}
+
+footer i{
+  font-size: 2em;
+}
+
+@media(max-width:488px){
+  .skill-container{
+    width: 100%;
+  }
+
+  .section{
+    padding: 50px 0;
+  }
+
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+  }
 }
 
 @media(max-width:568px){
@@ -259,4 +415,8 @@ footer{
   #work-linkin-section figure{
     width: 100%;
   } 
+
+  .skill-container{
+    width: 90%;
+  }
 }
