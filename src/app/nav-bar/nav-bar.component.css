@@ -2,7 +2,7 @@
     flex: 1 1 auto;
 }
 
-.btn, .brand{
+.btn{
     position: relative;
     display: block;
     text-decoration: none;
@@ -41,18 +41,31 @@ nav{
     flex-wrap: wrap;
     -webkit-box-align: center;
     align-items: center;
-    min-height: 70px;
-    padding: 8px 16px;
+    min-height: 120px;
+    padding: 16px 80px;
     background-color: transparent;
     color: white;
 }
 
-.last-item-in-bar{
-    margin-left: auto;
+.brand{
+    margin-left: 20px;
 }
 
-@media(max-width:750px){
+.last-item-in-bar{
+    margin-left: auto;
+    display: none;
+}
+
+@media(max-width:800px){
     .mobile-hidden{
         display: none;
+    }
+
+    nav{
+        padding: 16px 30px;
+    }
+
+    .last-item-in-bar{
+        display: block;
     }
 }

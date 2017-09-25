@@ -1,3 +1,6 @@
+/**
+ * General CSS styles
+ */
 .section-full-screen{
   position:relative;
   height:100%;
@@ -48,7 +51,7 @@
   width:100%;
   text-align:center;
   color:#000;
-  font-size:27px;
+  font-size:35px;
   letter-spacing:8px;
   text-transform:uppercase;
 }
@@ -349,23 +352,15 @@ section::after {
 */
 
 footer{
-  padding: 20px;
-  text-align: center;
+  padding: 20px 20px 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
   background-color:#3d4142;
   color: white; 
 }
 
-footer .copyright{
-  float: left;
-}
-
-footer .copyright, footer .contact{
-  margin-top: 2px;
-}
-
-footer .contact, footer .social-network{
-  padding: 0 10px 0 10px;
-  float: right;
+footer .contact, footer .social-network, footer .copyright{
+  padding: 5px 10px 5px 10px;
 }
 
 footer .social-network{
@@ -379,6 +374,10 @@ footer .social-network a{
 
 footer i{
   font-size: 2em;
+}
+
+.fill-remaining-space{
+  flex: 1 1 auto;
 }
 
 @media(max-width:488px){
@@ -418,5 +417,9 @@ footer i{
 
   .skill-container{
     width: 90%;
+  }
+
+  .ptext{
+    font-size: 18px;
   }
 }

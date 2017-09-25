@@ -1,6 +1,6 @@
 <div class="section-full-screen" data-parallax="scroll" data-image-src="/assets/img/award.jpg" data-bleed="100" data-speed="0.2" data-nature-width='1600' data-nature-height='1064'>
   <div class="ptext">
-    <span class="border" [@movePanel]=''>
+    <span class="border" ngsReveal>
       Congratulation
     </span>
   </div>
@@ -11,7 +11,7 @@
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi facilis consequatur, odio hic minima nostrum. Perferendis eos earum praesentium, blanditiis sapiente labore aliquam ipsa architecto vitae. Minima soluta temporibus voluptates inventore commodi cumque esse suscipit optio aliquam et, dolorem a cupiditate nihil fuga laboriosam fugiat placeat dignissimos! Unde eveniet placeat quisquam blanditiis voluptatem doloremque fugiat dolor repellendus ratione in. Distinctio provident dolorem modi cumque illo enim quidem tempora deserunt nostrum voluptate labore repellat quisquam quasi cum suscipit dolore ab consequuntur, ad porro earum temporibus. Laborum ad temporibus ex, omnis!
   </p>
-  <div id="brief-container">
+  <div id="brief-container" ngsRevealSet [ngsInterval]="300" [ngsSelector]="'.brief'">
     <div class="brief">
       <img src="../../assets/icon/graduate.png">
       <h3>Education</h3>
@@ -31,9 +31,9 @@
 </section>
 
 <section class="section section-light" id="skill-section">
-  <h2>Skill Set</h2>
+  <h2>Skills</h2>
   <div class="skill-wrapper">
-    <div class="skill-main-container">
+    <div class="skill-main-container" ngsRevealSet [ngsInterval]="300" [ngsSelector]="'.skill-container'">
       <h4>Web Development Skills</h4>
       <div class="skill-container">
         <div class="skill-element">
@@ -116,7 +116,7 @@
 </div> -->
 
 <section class="section section-dark" id="moment-section">
-  <h2>My Moments</h2>
+  <h2>Moments</h2>
   <div class="grid my-gallery">
     <figure class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
       <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" itemprop="contentUrl" data-size="900x600">
@@ -243,13 +243,14 @@
 
 <footer class="clearfix">
   <div class="copyright">&copy; 2017 - Laventy</div>
+  <div class="fill-remaining-space"></div>
+
+  <div class="contact">
+    Email: xiaolei.liu.work@gmail.com
+  </div>
 
   <div class="social-network">
     <a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
     <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  </div>
-
-  <div class="contact">
-    Email: xiaolei.liu.work@gmail.com
   </div>
 </footer>
