@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HostListener} from "@angular/core";
+
+// Declare jquery
+declare var $:any;
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,4 +16,13 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    var threshhold = 20;
+    if(window.pageYOffset >= threshhold){
+      $("nav").addClass("nav-change");
+    } else{
+      $("nav").removeClass("nav-change");
+    }
+  }
 }

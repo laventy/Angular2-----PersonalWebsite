@@ -41,10 +41,21 @@ nav{
     flex-wrap: wrap;
     -webkit-box-align: center;
     align-items: center;
-    min-height: 120px;
+    height: 120px;
     padding: 16px 80px;
     background-color: transparent;
     color: white;
+
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.5s ease-out;
+}
+
+.nav-change{
+    background-color: rgba(0,0,0,0.5);
+    height: 80px;
+    padding: 0 80px;
 }
 
 .brand{
@@ -62,6 +73,12 @@ nav{
     }
 
     nav{
+        padding: 16px 30px;
+    }
+
+    .nav-change{
+        background-color: rgba(0,0,0,0.5);
+        height: 80px;
         padding: 16px 30px;
     }
 
