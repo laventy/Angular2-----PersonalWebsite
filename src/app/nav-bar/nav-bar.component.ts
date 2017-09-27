@@ -14,8 +14,14 @@ export class NavBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // Check whether the device is touch-enabled
+    // Then add touch-device class to the html tag
+    $(document).on('touchstart', function() {
+        $('section, nav').addClass('touch-device');
+    });
   }
 
+  // Detect scroll event to change the style of nav bar
   @HostListener("window:scroll", [])
   onWindowScroll() {
     var threshhold = 20;

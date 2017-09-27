@@ -1,7 +1,43 @@
+/**
+ * General CSS styles
+ */
 .fill-remaining-space{
     flex: 1 1 auto;
 }
 
+/**
+ * Nav styles
+ */
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 120px;
+    padding: 16px 80px;
+    background-color: transparent;
+    color: white;
+
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.5s ease-out;
+}
+
+.nav-change{
+    background-color: rgba(0,0,0,0.7);
+    height: 80px;
+    padding: 0 80px;
+}
+
+.last-item-in-bar{
+    margin-left: auto;
+    display: none;
+}
+
+/**
+ * Nav Buttons
+ */
 .btn{
     position: relative;
     display: block;
@@ -36,35 +72,17 @@
   transform: scaleX(1);
 }
 
-nav{
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    align-items: center;
-    height: 120px;
-    padding: 16px 80px;
-    background-color: transparent;
-    color: white;
-
-    position: fixed;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.5s ease-out;
+/* Consider the mobile device which has no hover support*/
+nav.touch-device .btn:hover:after {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
 }
 
-.nav-change{
-    background-color: rgba(0,0,0,0.5);
-    height: 80px;
-    padding: 0 80px;
-}
-
+/**
+ * Brand styles
+ */
 .brand{
     margin-left: 20px;
-}
-
-.last-item-in-bar{
-    margin-left: auto;
-    display: none;
 }
 
 @media(max-width:800px){

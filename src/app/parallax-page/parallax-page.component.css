@@ -14,8 +14,8 @@
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    display: table;
 }
 
 .clearfix:after {
@@ -185,10 +185,14 @@ section::after {
   clear: both;
 }
 
-/* ---- .grid-item ---- */
+/* ---- .grid settings ---- */
 .grid-sizer,
 .grid-item {
-  width: 33.333%;
+  width: calc((100% - 2%)/3);
+}
+
+.gutter-sizer{
+  width: 1%;
 }
 
 .grid-item {
@@ -196,6 +200,7 @@ section::after {
   float: left;
   overflow: hidden;
   margin: 0;
+  margin-bottom: 1%;
 }
 
 .grid-item figcaption{
@@ -205,14 +210,38 @@ section::after {
 .grid-item img {
   display: block;
   width: 100%;
-  -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(80%);
-  transition: all 0.5s;
+  opacity: 1;
 }
 
+.grid-item i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 7vmin;
+  opacity: 0;
+  color: white;
+  transition: all .3s ease-out;
+}
+
+/* Hover effect */
 .grid-item:hover img {
-  -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
-  filter: grayscale(0);
+  opacity: 0.6;
+}
+
+.grid-item:hover i {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+/* Consider the mobile device which has no hover support */
+/* Just eliminate the hover effect */
+section.touch-device .grid-item:hover img {
+  opacity: 1;
+}
+
+section.touch-device .grid-item:hover i {
+  opacity: 0;
 }
 
 /*
@@ -322,14 +351,13 @@ section::after {
 }
 
 #work-linkin-section figure.effect-lily p {
-  opacity: 0;
+  opacity: 1;
 	color: rgba(255,255,255,0.8);
 	-webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
 	transition: opacity 0.2s, transform 0.35s;
 }
 
-#work-linkin-section figure.effect-lily:hover img,
-#work-linkin-section figure.effect-lily:hover p {
+#work-linkin-section figure.effect-lily:hover img{
 	opacity: 1;
 }
 
@@ -345,6 +373,23 @@ section::after {
 	transition-delay: 0.05s;
 	-webkit-transition-duration: 0.35s;
 	transition-duration: 0.35s;
+}
+
+/* Consider the mobile device which has no hover support*/
+/* hover effect changes nothing if it is mobile devices */
+#work-linkin-section.touch-device figure.effect-lily:hover img{
+	opacity: 0.7;
+}
+
+#work-linkin-section.touch-device figure.effect-lily:hover h2,
+#work-linkin-section.touch-device figure.effect-lily:hover p {
+  -webkit-transform: translate3d(0,40px,0);
+	transform: translate3d(0,40px,0);
+}
+
+#work-linkin-section.touch-device figure.effect-lily:hover img{
+  -webkit-transform: translate3d(-40px,0, 0);
+	transform: translate3d(-40px,0,0);
 }
 
 /*
@@ -384,15 +429,6 @@ footer i{
   .skill-container{
     width: 100%;
   }
-
-  .section{
-    padding: 50px 0;
-  }
-
-  .grid-sizer,
-  .grid-item {
-    width: 50%;
-  }
 }
 
 @media(max-width:568px){
@@ -421,5 +457,14 @@ footer i{
 
   .ptext{
     font-size: 18px;
+  }
+
+  .grid-sizer,
+  .grid-item {
+    width: 49%;
+  }
+
+  .section{
+    padding: 10px 0;
   }
 }

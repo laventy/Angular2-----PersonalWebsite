@@ -57,6 +57,7 @@ export class ParallaxPageComponent implements OnInit {
         itemSelector: '.grid-item',
         percentPosition: true,
         columnWidth: '.grid-sizer',
+        gutter: '.gutter-sizer',
       }); 
     });
   }
